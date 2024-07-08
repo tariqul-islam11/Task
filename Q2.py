@@ -14,18 +14,18 @@ class Item:
 
 class Book(Item):
     def __init__(self,title: str, author: str, year: int, publisher: str, isbn: str):
+        super().__init__(title, author, year)
         self.publisher = publisher
         self.isbn = isbn
-        super().__init__(title, author, year)
-
+        
     def get_info(self):
         return f"Book: (Title: {self.title}, Author: {self.author}, Year: {self.year}, Publisher: {self.publisher}, ISBN: {self.isbn})"
 
 class DVD(Item):
     def __init__(self, title: str, author: str, year: int, duration: int, region_code: int):
+        super().__init__(title, author, year)
         self.duration = duration
         self.region = region_code
-        super().__init__(title, author, year)
     
     def get_info(self):
         return f"DVD: (Title: {self.title}, Author: {self.author}, Year: {self.year}, Duration: {self.duration}Hour, Region Code: {self.region})"
